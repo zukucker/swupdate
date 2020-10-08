@@ -57,12 +57,12 @@ func main() {
   fmt.Println("=======================")
 
   for _, s := range rss.Channel.Item {
-    fmt.Println("\n", "🆕Version " + s.Title, "\n")
-
+    fmt.Println("\n", "🆕Version " + s.Title)
+    fmt.Println("  "+s.PubDate)
     var re = regexp.MustCompile(`SW-`)
     s := re.ReplaceAllString(s.Description,  "\n \t" + `✔️  SW-` )
 
-    fmt.Println("\t" + "Patches")
+    fmt.Println("\t" + "Tickets")
     fmt.Println(s)
     }
 }
